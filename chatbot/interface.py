@@ -4,6 +4,9 @@ import pickle
 import numpy as np
 import nltk
 import tkinter as tk
+from tkinter import *
+from tkinter import ttk
+from ttkthemes import ThemedTk
 from tkinter import Scrollbar, Text
 
 from nltk.stem import WordNetLemmatizer
@@ -69,29 +72,33 @@ def send():
         chat_window.yview(tk.END)
 
 # Create GUI
-root = tk.Tk()
-root.title("Chatbot")
+root = ThemedTk(theme= "equilux")
+root.title("SupportBot")
 root.geometry("400x500")
 root.resizable(width=False, height=False)
 
+style= ttk.Style()
+style.configure("TButton", font= ("Segoe UI", 10), padding= 6)
 # Chat window
-chat_window = Text(root, bd=1, bg="white", height="8", width="50", font="Arial", wrap="word")
+chat_window = Text(root, bd= 1,bg= "#262626", fg="#FFFFFF", font=("Segoe UI", 10), wrap="word")
 chat_window.config(state=tk.DISABLED)
+chat_window.tag_config("user", foreground= "#36D1DC")
+chat_window.tag_config("bot", foreground= "#FFAB00")
 
 # Scrollbar
-scrollbar = Scrollbar(root, command=chat_window.yview, cursor="heart")
+scrollbar = Scrollbar(root, command=chat_window.yview)
 chat_window['yscrollcommand'] = scrollbar.set
 
 # Entry box
-entry_box = Text(root, bd=0, bg="white", width="29", height="5", font="Arial")
+entry_box = Text(root, bd= 1, bg="#1e1e1e", fg="#FFFFFF", font=("Segoe UI", 10), height=3)
 
 # Send button
-send_button = tk.Button(root, text="Send", width="12", height=5, bd=0, bg="#32de97", activebackground="#3c9d9b", fg="#ffffff", font=("Arial", 12), command=send)
+send_button = ttk.Button(root, text="Send", command=send)
 
 # Place components on screen
-scrollbar.place(x=376, y=6, height=386)
 chat_window.place(x=6, y=6, height=386, width=370)
-entry_box.place(x=6, y=401, height=90, width=265)
-send_button.place(x=275, y=401, height=90)
+scrollbar.place(x=376, y=6, height=386)
+entry_box.place(x=6, y=401, height=60, width=300)
+send_button.place(x=310, y=401, height=60, width= 80)
 
 root.mainloop()
