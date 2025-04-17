@@ -1,22 +1,87 @@
-{"intents": [
-        {"tag": "greeting",
-         "patterns": ["Hi there", "How are you", "Is anyone there?","Hey","Hola", "Hello", "Good day"],
-         "responses": ["Hello", "Good to see you again", "Hi there, how can I help?"],
-         "context": [""]
+ {
+    "intents": [
+        {
+            "tag": "greeting",
+            "patterns": [
+                "Hi", "Hello", "Hey", "How are you?", "Good morning", "Good evening",
+                "Hi there", "Hey there", "What's up?", "How's it going?"
+            ],
+            "responses": [
+                "Hello! How can I assist you today?", "Hi there! Need help with something?",
+                "Hey! What can I do for you?", "Hi! How are you doing today?",
+                "Hello! What brings you here today?", "Greetings! How can I make your day better?"
+            ]
         },
-        {"tag": "goodbye",
-         "patterns": ["Bye", "See you later", "Goodbye", "Nice chatting to you, bye", "Till next time"],
-         "responses": ["See you!", "Have a nice day", "Bye! Come back again soon."],
-         "context": [""]
+        {
+            "tag": "goodbye",
+            "patterns": [
+                "Goodbye", "See you", "Bye for now", "Catch you later", "Take care",
+                "See you later", "Till next time", "Have a good day", "Talk to you soon"
+            ],
+            "responses": [
+                "Goodbye! Have a fantastic day!", "See you soon! Let me know if you need anything else.",
+                "Take care and stay safe!", "Bye! Don't hesitate to reach out if you need help.",
+                "Farewell! Have a great day ahead.", "Bye! Looking forward to our next chat."
+            ]
         },
-        {"tag": "thanks",
-         "patterns": ["Thanks", "Thank you", "That's helpful", "Awesome, thanks", "Thanks for helping me"],
-         "responses": ["My pleasure", "You're Welcome"],
-         "context": [""]
+        {
+            "tag": "thanks",
+            "patterns": [
+                "Thanks", "Thank you", "Much appreciated", "Thanks a lot", "I'm grateful",
+                "Thank you so much", "Thanks for your help", "Thanks for assisting me"
+            ],
+            "responses": [
+                "You're very welcome! Happy to help.", "Anytime! Let me know if there's more I can do.",
+                "It's my pleasure to assist.", "No problem! I'm here to help anytime.",
+                "You're welcome! Let me know if you have more questions.", "Always happy to help!"
+            ]
         },
-        {"tag": "query",
-         "patterns": ["What is Simplilearn?"],
-         "responses": ["Simplilearn is the popular online Bootcamp & online courses learning platform "],
-         "context": [""]
-        } 
-    ]}
+        {
+            "tag": "query",
+            "patterns": [
+                "What is SupportBot?", "Tell me about SupportBot", "Can you explain how SupportBot works?",
+                "What's SupportBot known for?", "SupportBot details?", "SupportBot info please"
+            ],
+            "responses": [
+                "SupportBot is a chatbot built by Rodrick to offer self help tech support diagnosis for your computer. ",
+                "SupportBot is an AI assistant created by Rodrick to provide automated tech support and troubleshooting for computer issues",
+                "Developed by Rodrick, SupportBot is a chatbot designed to help users diagnose and resolve computer problems independently.",
+                "Rodrick built SupportBot as a self-service chatbot that assists with computer-related tech support and diagnostics.",
+                "SupportBot, a chatbot developed by Rodrick, enables users to troubleshoot their computer issues through automated self-help support.",
+                "This chatbot, called SupportBot, was designed by Rodrick to offer automated diagnostic assistance for computer tech support."
+            ]
+        },
+        {
+            "tag": "help",
+            "patterns": [
+                "Can you help me?", "I need assistance", "What can you do?", "Can you guide me?",
+                "Can you assist?", "I need help", "What services do you offer?"
+            ],
+            "responses": [
+                "Of course! Let me know what you're looking for.", "Sure! I'm here to help with any questions or tasks you have in mind.",
+                "I'm ready to assist. Tell me more about what you need.", "I'd be happy to help. Please provide more details.",
+                "Absolutely! Ask me anything, and I'll do my best to assist."
+            ]
+        },
+        {
+            "tag": "internet_issue",
+            "patterns": ["My internet is not working", "No internet connection", "Can't connect to Wi-Fi", "Wi-Fi is down"],
+            "responses": ["Try restarting your router. Did that help?", "Please check if the cables are properly connected and restart your modem."]
+          },
+          {
+            "tag": "password_reset",
+            "patterns": ["I forgot my password", "How do I reset my password?", "Password recovery", "Can't log in"],
+            "responses": ["You can reset your password by clicking 'Forgot Password' on the login page.", "Go to the settings page and choose 'Reset Password'."]
+          },
+          {
+            "tag": "software_install",
+            "patterns": ["How do I install the software?", "Help me install the app", "Installation guide", "Set up the program"],
+            "responses": ["Download the installer from the official website and run it.", "Make sure your system meets the requirements before installing."]
+          },
+          {
+            "tag": "slow_computer",
+            "patterns": ["My computer is slow", "Why is my laptop lagging?", "System is freezing", "Performance issues"],
+            "responses": ["Try restarting your computer and closing unnecessary background apps.", "Consider checking for malware or doing a disk cleanup."]
+          }
+    ]
+}
